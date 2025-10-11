@@ -133,5 +133,38 @@
     <p>&copy; 2025 Mount Mary University | All Rights Reserved</p>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight current nav link based on URL
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.style.textDecoration = 'underline';
+          link.style.fontWeight = 'bold';
+        }
+      });
+
+      // 4. Dynamic greeting in header
+      const header = document.querySelector('header h1');
+      if (header) {
+        const now = new Date();
+        const hour = now.getHours();
+        let greeting = 'Mount Mary University Dining Services';
+
+        if (hour >= 5 && hour < 12) {
+          greeting = 'Good Morning, Welcome to Mount Mary University Dining Services';
+        } else if (hour >= 12 && hour < 18) {
+          greeting = 'Good Afternoon, Welcome to Mount Mary University Dining Services';
+        } else if (hour >= 18 || hour < 5) {
+          greeting = 'Good Evening, Welcome to Mount Mary University Dining Services';
+        }
+
+        header.textContent = greeting;
+      }
+    });
+  </script>
+
 </body>
 </html>
