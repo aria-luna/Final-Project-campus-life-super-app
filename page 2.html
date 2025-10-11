@@ -21,25 +21,21 @@
     }
 
     nav {
-      background-color: #0066cc;
+      background-color: #003366;
+      padding: 0.5rem 2rem;
       text-align: center;
-      padding: 1rem 0;
     }
 
     nav a {
-      display: inline-block;
-      background-color: #004080;
       color: white;
-      padding: 0.75rem 1.5rem;
       margin: 0 1rem;
       text-decoration: none;
-      border-radius: 5px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
     }
 
-    nav a:hover {
-      background-color: #002d66;
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
     }
 
     .dining-image {
@@ -82,18 +78,16 @@
     <h1>Mount Mary University Dining Services</h1>
   </header>
 
-  <!-- Navigation Links -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="page3.html">Events</a>
+    <a href="index.html">Apply & Contact</a>
+    <a href="page2.html">Dining</a>
+    <a href="page3.html">Calendar & Events</a>
   </nav>
 
   <!-- Dining Room Image -->
   <img src="dining-room.jpg" alt="Dining Room at Mount Mary University" class="dining-image" />
 
   <main>
-
-    <!-- Dining Hall Section -->
     <section id="dining-hall">
       <h2>Dining Hall</h2>
       <article class="menu">
@@ -114,7 +108,6 @@
       </article>
     </section>
 
-    <!-- Cyber Café Section -->
     <section id="cyber-cafe">
       <h2>Cyber Café</h2>
       <article class="menu">
@@ -134,7 +127,6 @@
         </ul>
       </article>
     </section>
-
   </main>
 
   <footer>
