@@ -2,163 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dining Services | Mount Mary University</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #003366;
-      padding: 0.5rem 2rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      text-decoration: underline;
-    }
-
-    .dining-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: white;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      color: #004080;
-    }
-
-    .hours, .menu {
-      margin-top: 0.5rem;
-      padding-left: 1rem;
-    }
-
-    footer {
-      background-color: #004080;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>Mount Mary University Dining Services</h1>
+  <header class="bg-primary text-white text-center py-4 mb-4">
+    <div class="container">
+      <h1 id="page-title">Mount Mary University Dining Services</h1>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Apply & Contact</a>
-    <a href="page2.html">Dining</a>
-    <a href="page3.html">Calendar & Events</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">MMU</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Apply & Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page2.html">Dining</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page3.html">Calendar & Events</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- Dining Room Image -->
-  <img src="dining-room.jpg" alt="Dining Room at Mount Mary University" class="dining-image" />
+  <div class="container mb-4">
+    <img src="dining-room.jpg" alt="Dining Room at Mount Mary University" class="img-fluid rounded" />
+  </div>
 
-  <main>
-    <section id="dining-hall">
+  <main class="container mb-5">
+    <section id="dining-hall" class="mb-5">
       <h2>Dining Hall</h2>
-      <article class="menu">
-        <h3>Menu</h3>
-        <ul>
-          <li>Grilled Chicken Sandwich</li>
-          <li>Vegetarian Pasta</li>
-          <li>Fresh Salad Bar</li>
-          <li>Daily Soup Special</li>
-        </ul>
-      </article>
-      <article class="hours">
-        <h3>Hours of Operation</h3>
-        <ul>
-          <li>Monday - Friday: 7:00 AM – 7:00 PM</li>
-          <li>Saturday - Sunday: 9:00 AM – 6:00 PM</li>
-        </ul>
-      </article>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Menu</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Grilled Chicken Sandwich</li>
+            <li class="list-group-item">Vegetarian Pasta</li>
+            <li class="list-group-item">Fresh Salad Bar</li>
+            <li class="list-group-item">Daily Soup Special</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Hours of Operation</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Monday - Friday: 7:00 AM – 7:00 PM</li>
+            <li class="list-group-item">Saturday - Sunday: 9:00 AM – 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="cyber-cafe">
       <h2>Cyber Café</h2>
-      <article class="menu">
-        <h3>Menu</h3>
-        <ul>
-          <li>Coffee & Espresso Drinks</li>
-          <li>Pastries & Muffins</li>
-          <li>Grab-and-Go Sandwiches</li>
-          <li>Fruit Smoothies</li>
-        </ul>
-      </article>
-      <article class="hours">
-        <h3>Hours of Operation</h3>
-        <ul>
-          <li>Monday - Friday: 8:00 AM – 5:00 PM</li>
-          <li>Closed on Weekends</li>
-        </ul>
-      </article>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Menu</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Coffee & Espresso Drinks</li>
+            <li class="list-group-item">Pastries & Muffins</li>
+            <li class="list-group-item">Grab-and-Go Sandwiches</li>
+            <li class="list-group-item">Fruit Smoothies</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Hours of Operation</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Monday - Friday: 8:00 AM – 5:00 PM</li>
+            <li class="list-group-item">Closed on Weekends</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Mount Mary University | All Rights Reserved</p>
+  <footer class="bg-primary text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Mount Mary University | All Rights Reserved</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS Bundle (Popper + JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Highlight current nav link based on URL
-      const navLinks = document.querySelectorAll('nav a');
+      // Highlight current nav link
+      const navLinks = document.querySelectorAll('nav .nav-link');
       const currentPage = window.location.pathname.split('/').pop();
 
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
-          link.style.textDecoration = 'underline';
-          link.style.fontWeight = 'bold';
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
         }
       });
 
-      // 4. Dynamic greeting in header
-      const header = document.querySelector('header h1');
+      // Dynamic greeting in header
+      const header = document.getElementById('page-title');
       if (header) {
         const now = new Date();
         const hour = now.getHours();
         let greeting = 'Mount Mary University Dining Services';
 
         if (hour >= 5 && hour < 12) {
-          greeting = 'Good Morning, Welcome to Mount Mary University Dining Services';
+          greeting = 'Good Morning, Welcome to Mount Mary University Dining';
         } else if (hour >= 12 && hour < 18) {
-          greeting = 'Good Afternoon, Welcome to Mount Mary University Dining Services';
+          greeting = 'Good Afternoon, Welcome to Mount Mary University Dining';
         } else if (hour >= 18 || hour < 5) {
-          greeting = 'Good Evening, Welcome to Mount Mary University Dining Services';
+          greeting = 'Good Evening, Welcome to Mount Mary University Dining';
         }
 
         header.textContent = greeting;
