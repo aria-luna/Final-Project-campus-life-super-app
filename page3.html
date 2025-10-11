@@ -2,234 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calendar & Events | Mount Mary University</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f0f2f5;
-      color: #333;
-    }
-
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #003366;
-      padding: 0.5rem 2rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      color: #004080;
-      border-bottom: 2px solid #004080;
-      padding-bottom: 0.5rem;
-    }
-
-    .calendar {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 5px;
-      text-align: center;
-    }
-
-    .calendar div {
-      padding: 10px;
-      background-color: white;
-      border: 1px solid #ccc;
-    }
-
-    .calendar .day-name {
-      font-weight: bold;
-      background-color: #e0e0e0;
-    }
-
-    .calendar .today {
-      background-color: #cce5ff;
-      border: 2px solid #004080;
-    }
-
-    ul.event-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.event-list li {
-      background-color: white;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-left: 4px solid #004080;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    ul.event-list li .details {
-      margin-top: 0.5rem;
-      font-style: italic;
-      color: #555;
-    }
-
-    time {
-      font-weight: bold;
-      color: #004080;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #004080;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>Mount Mary University</h1>
-    <p>Calendar & Events</p>
+  <header class="bg-primary text-white text-center py-4 mb-4">
+    <div class="container">
+      <h1 id="page-title">Mount Mary University Calendar & Events</h1>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Apply & Contact</a>
-    <a href="page2.html">Dining</a>
-    <a href="page3.html">Calendar & Events</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">MMU</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Apply & Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page2.html">Dining</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page3.html">Calendar & Events</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <main>
-
-    <!-- Calendar Section -->
-    <section aria-labelledby="calendar-heading">
-      <h2 id="calendar-heading">October 2025 Calendar</h2>
-      <div class="calendar">
-        <!-- Weekday Names -->
-        <div class="day-name">Sun</div>
-        <div class="day-name">Mon</div>
-        <div class="day-name">Tue</div>
-        <div class="day-name">Wed</div>
-        <div class="day-name">Thu</div>
-        <div class="day-name">Fri</div>
-        <div class="day-name">Sat</div>
-
-        <!-- Empty cells for days before October 1st (starts on Wednesday) -->
-        <div></div><div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div>
-        <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
-        <div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div class="today">17</div><div>18</div>
-        <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
-        <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div></div>
+  <main class="container mb-5">
+    <section id="calendar" class="mb-5">
+      <h2 class="mb-4">October 2025 Calendar</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead class="table-light">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-muted">28</td>
+              <td class="text-muted">29</td>
+              <td class="text-muted">30</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>13</td>
+              <td class="table-primary fw-bold">14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+              <td class="text-muted">1</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <!-- Events This Week -->
-    <section aria-labelledby="events-heading">
-      <h2 id="events-heading">Upcoming Events (Week of October 14–20)</h2>
-      <ul class="event-list">
-        <li>
+    <section id="events">
+      <h2>Upcoming Events (Week of October 14–20)</h2>
+      <ul class="list-group">
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-14">Monday, Oct 14</time>: Career Development Workshop – 3:00 PM at Notre Dame Hall Room 201
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-15">Tuesday, Oct 15</time>: Women's Leadership Speaker Series – 6:00 PM in Alumnae Dining Room
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-16">Wednesday, Oct 16</time>: Cyber Café Open Mic Night – 7:00 PM at Cyber Café
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-17">Thursday, Oct 17</time>: Student Government Meeting – 12:00 PM in Bergstrom Hall
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-18">Friday, Oct 18</time>: Movie Night: “Hidden Figures” – 8:00 PM in Caroline Hall Theater
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-19">Saturday, Oct 19</time>: Campus Clean-Up Day – 10:00 AM, meet at the Main Entrance
         </li>
-        <li>
+        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
           <time datetime="2025-10-20">Sunday, Oct 20</time>: Sunday Mass – 11:00 AM in Chapel of the Holy Spirit
         </li>
       </ul>
     </section>
-
   </main>
 
-  <footer>
-    <p>&copy; 2025 Mount Mary University | Events Office</p>
+  <footer class="bg-primary text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Mount Mary University | Events Office</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS Bundle (Popper + JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Highlight current nav link based on URL
-      const navLinks = document.querySelectorAll('nav a');
+      // Highlight current nav link
+      const navLinks = document.querySelectorAll('nav .nav-link');
       const currentPage = window.location.pathname.split('/').pop();
 
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
-          link.style.textDecoration = 'underline';
-          link.style.fontWeight = 'bold';
+          link.classList.add('active');
+          link.setAttribute('aria-current', 'page');
         }
       });
 
-      // 3. Calendar event toggle
-      if (currentPage === 'page3.html') {
-        const events = document.querySelectorAll('.event-list li');
-        events.forEach(eventItem => {
-          eventItem.style.cursor = 'pointer';
-
-          eventItem.addEventListener('click', () => {
-            let details = eventItem.querySelector('.details');
-            if (!details) {
-              details = document.createElement('p');
-              details.classList.add('details');
-              details.style.marginTop = '0.5rem';
-              details.style.fontStyle = 'italic';
-              details.style.color = '#555';
-              details.textContent = 'More details about the event: location, speakers, RSVP info, and more.';
-              eventItem.appendChild(details);
-            } else {
-              details.remove();
-            }
-          });
+      // Event toggle details on click
+      const events = document.querySelectorAll('.list-group-item');
+      events.forEach(eventItem => {
+        eventItem.addEventListener('click', () => {
+          let details = eventItem.querySelector('.details');
+          if (!details) {
+            details = document.createElement('p');
+            details.classList.add('details', 'mt-2', 'fst-italic', 'text-muted');
+            details.textContent = 'More details about the event: location, speakers, RSVP info, and more.';
+            eventItem.appendChild(details);
+          } else {
+            details.remove();
+          }
         });
-      }
+      });
 
-      // 4. Dynamic greeting in header
-      const header = document.querySelector('header h1');
+      // Dynamic greeting in header
+      const header = document.getElementById('page-title');
       if (header) {
         const now = new Date();
         const hour = now.getHours();
-        let greeting = 'Mount Mary University';
+        let greeting = 'Mount Mary University Calendar & Events';
 
         if (hour >= 5 && hour < 12) {
-          greeting = 'Good Morning, Welcome to Mount Mary University';
+          greeting = 'Good Morning, Welcome to Mount Mary University Events';
         } else if (hour >= 12 && hour < 18) {
-          greeting = 'Good Afternoon, Welcome to Mount Mary University';
+          greeting = 'Good Afternoon, Welcome to Mount Mary University Events';
         } else if (hour >= 18 || hour < 5) {
-          greeting = 'Good Evening, Welcome to Mount Mary University';
+          greeting = 'Good Evening, Welcome to Mount Mary University Events';
         }
 
         header.textContent = greeting;
