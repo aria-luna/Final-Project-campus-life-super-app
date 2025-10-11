@@ -9,149 +9,91 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header class="bg-primary text-white text-center py-4 mb-4">
     <div class="container">
       <h1 id="page-title">Mount Mary University Calendar & Events</h1>
     </div>
   </header>
 
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
       <a class="navbar-brand" href="index.html">MMU</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Apply & Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="page2.html">Dining</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="page3.html">Calendar & Events</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Apply & Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="page2.html">Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="page3.html">Calendar & Events</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Weather Info -->
+  <div class="container mb-4">
+    <div id="weather" class="alert alert-info d-flex align-items-center" role="alert">
+      <div id="weather-icon" class="me-3"></div>
+      <div><strong>Loading weather...</strong></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <main class="container mb-5">
+
+    <!-- Calendar Table -->
     <section id="calendar" class="mb-5">
       <h2 class="mb-4">October 2025 Calendar</h2>
       <div class="table-responsive">
         <table class="table table-bordered text-center">
           <thead class="table-light">
             <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
+              <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-muted">28</td>
-              <td class="text-muted">29</td>
-              <td class="text-muted">30</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>13</td>
-              <td class="table-primary fw-bold">14</td>
-              <td>15</td>
-              <td>16</td>
-              <td>17</td>
-              <td>18</td>
-            </tr>
-            <tr>
-              <td>19</td>
-              <td>20</td>
-              <td>21</td>
-              <td>22</td>
-              <td>23</td>
-              <td>24</td>
-              <td>25</td>
-            </tr>
-            <tr>
-              <td>26</td>
-              <td>27</td>
-              <td>28</td>
-              <td>29</td>
-              <td>30</td>
-              <td>31</td>
-              <td class="text-muted">1</td>
-            </tr>
+            <tr><td class="text-muted">28</td><td class="text-muted">29</td><td class="text-muted">30</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+            <tr><td>12</td><td>13</td><td class="table-primary fw-bold">14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+            <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+            <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="text-muted">1</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <!-- Events List -->
     <section id="events">
       <h2>Upcoming Events (Week of October 14–20)</h2>
       <ul class="list-group">
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-14">Monday, Oct 14</time>: Career Development Workshop – 3:00 PM at Notre Dame Hall Room 201
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-15">Tuesday, Oct 15</time>: Women's Leadership Speaker Series – 6:00 PM in Alumnae Dining Room
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-16">Wednesday, Oct 16</time>: Cyber Café Open Mic Night – 7:00 PM at Cyber Café
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-17">Thursday, Oct 17</time>: Student Government Meeting – 12:00 PM in Bergstrom Hall
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-18">Friday, Oct 18</time>: Movie Night: “Hidden Figures” – 8:00 PM in Caroline Hall Theater
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-19">Saturday, Oct 19</time>: Campus Clean-Up Day – 10:00 AM, meet at the Main Entrance
-        </li>
-        <li class="list-group-item" tabindex="0" style="cursor:pointer;">
-          <time datetime="2025-10-20">Sunday, Oct 20</time>: Sunday Mass – 11:00 AM in Chapel of the Holy Spirit
-        </li>
+        <li class="list-group-item" tabindex="0">Monday, Oct 14: Career Development Workshop – 3:00 PM at Notre Dame Hall Room 201</li>
+        <li class="list-group-item" tabindex="0">Tuesday, Oct 15: Women's Leadership Speaker Series – 6:00 PM in Alumnae Dining Room</li>
+        <li class="list-group-item" tabindex="0">Wednesday, Oct 16: Cyber Café Open Mic Night – 7:00 PM at Cyber Café</li>
+        <li class="list-group-item" tabindex="0">Thursday, Oct 17: Student Government Meeting – 12:00 PM in Bergstrom Hall</li>
+        <li class="list-group-item" tabindex="0">Friday, Oct 18: Movie Night: “Hidden Figures” – 8:00 PM in Caroline Hall Theater</li>
+        <li class="list-group-item" tabindex="0">Saturday, Oct 19: Campus Clean-Up Day – 10:00 AM, meet at the Main Entrance</li>
+        <li class="list-group-item" tabindex="0">Sunday, Oct 20: Sunday Mass – 11:00 AM in Chapel of the Holy Spirit</li>
       </ul>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-primary text-white text-center py-3">
     <div class="container">
       <p class="mb-0">&copy; 2025 Mount Mary University | Events Office</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle (Popper + JS) -->
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- ✅ JavaScript: Weather API + Nav Highlight + Event Toggle + Greeting -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Highlight current nav link
+      // Highlight nav link
       const navLinks = document.querySelectorAll('nav .nav-link');
       const currentPage = window.location.pathname.split('/').pop();
 
@@ -162,7 +104,25 @@
         }
       });
 
-      // Event toggle details on click
+      // Dynamic greeting
+      const header = document.getElementById('page-title');
+      if (header) {
+        const now = new Date();
+        const hour = now.getHours();
+        let greeting = 'Mount Mary University Calendar & Events';
+
+        if (hour >= 5 && hour < 12) {
+          greeting = 'Good Morning, Welcome to Mount Mary University Events';
+        } else if (hour >= 12 && hour < 18) {
+          greeting = 'Good Afternoon, Welcome to Mount Mary University Events';
+        } else {
+          greeting = 'Good Evening, Welcome to Mount Mary University Events';
+        }
+
+        header.textContent = greeting;
+      }
+
+      // Event toggle
       const events = document.querySelectorAll('.list-group-item');
       events.forEach(eventItem => {
         eventItem.addEventListener('click', () => {
@@ -178,23 +138,38 @@
         });
       });
 
-      // Dynamic greeting in header
-      const header = document.getElementById('page-title');
-      if (header) {
-        const now = new Date();
-        const hour = now.getHours();
-        let greeting = 'Mount Mary University Calendar & Events';
+      // ✅ Weather API Fetch with Your API Key
+      async function fetchWeather() {
+        const apiKey = 'cbZgq9WJzquxb6cWSKn6q9LQwJsjDMgz'; // ✅ Your API key
+        const city = 'Milwaukee';
+        const units = 'imperial';
+        const weatherDiv = document.getElementById('weather');
+        const iconDiv = document.getElementById('weather-icon');
 
-        if (hour >= 5 && hour < 12) {
-          greeting = 'Good Morning, Welcome to Mount Mary University Events';
-        } else if (hour >= 12 && hour < 18) {
-          greeting = 'Good Afternoon, Welcome to Mount Mary University Events';
-        } else if (hour >= 18 || hour < 5) {
-          greeting = 'Good Evening, Welcome to Mount Mary University Events';
+        try {
+          const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`
+          );
+          const data = await response.json();
+
+          const temp = Math.round(data.main.temp);
+          const description = data.weather[0].description;
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+
+          iconDiv.innerHTML = `<img src="${iconUrl}" alt="${description}" />`;
+          weatherDiv.querySelector('div:last-child').innerHTML = `
+            <strong>Milwaukee Weather:</strong> ${temp}&deg;F, ${description}
+          `;
+        } catch (error) {
+          weatherDiv.classList.remove('alert-info');
+          weatherDiv.classList.add('alert-warning');
+          weatherDiv.textContent = 'Unable to load weather at this time.';
+          console.error('Weather fetch failed:', error);
         }
-
-        header.textContent = greeting;
       }
+
+      fetchWeather();
     });
   </script>
 
