@@ -19,7 +19,6 @@
       text-align: center;
     }
 
-    /* Navigation bar styles */
     nav {
       background-color: #0066cc;
       text-align: center;
@@ -116,7 +115,7 @@
 
   <!-- Navigation bar -->
   <nav>
-    <a href="index.html">Home Page</a>
+    <a href="index.html">Home</a>
     <a href="page2.html">Dining Services</a>
   </nav>
 
