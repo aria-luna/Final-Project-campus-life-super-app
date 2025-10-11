@@ -11,7 +11,7 @@
       }
     });
 
-    // 2. (Optional) Smooth scroll if nav links point to page sections on the same page (only on index.html)
+    // 2. Smooth scroll (only on index.html)
     if (currentPage === '' || currentPage === 'index.html') {
       navLinks.forEach(link => {
         if (link.getAttribute('href').startsWith('#')) {
@@ -34,7 +34,6 @@
         eventItem.style.cursor = 'pointer';
 
         eventItem.addEventListener('click', () => {
-          // Toggle extra details (we'll add a dummy detail paragraph)
           let details = eventItem.querySelector('.details');
           if (!details) {
             details = document.createElement('p');
@@ -42,9 +41,6 @@
             details.style.marginTop = '0.5rem';
             details.style.fontStyle = 'italic';
             details.style.color = '#555';
-
-            // Example details text - in real life, pull dynamically or store in HTML data attributes
-            const baseText = eventItem.textContent;
             details.textContent = 'More details about the event: location, speakers, RSVP info, and more.';
             eventItem.appendChild(details);
           } else {
@@ -52,9 +48,40 @@
           }
         });
       });
+
+      // 4. Fetch and display weather using OpenWeatherMap API
+      async function fetchWeather() {
+        const apiKey = 'cbZgq9WJzquxb6cWSKn6q9LQwJsjDMgz'; // ✅ Your API key
+        const city = 'Milwaukee';
+        const units = 'imperial';
+        const weatherDiv = document.getElementById('weather');
+        const iconDiv = document.getElementById('weather-icon');
+
+        if (!weatherDiv || !iconDiv) return; // Exit if weather elements don't exist
+
+        try {
+          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`);
+          const data = await response.json();
+
+          const temp = Math.round(data.main.temp);
+          const description = data.weather[0].description;
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+
+          iconDiv.innerHTML = `<img src="${iconUrl}" alt="${description}" />`;
+          weatherDiv.querySelector('div:last-child').innerHTML = `<strong>Milwaukee Weather:</strong> ${temp}&deg;F, ${description}`;
+        } catch (error) {
+          weatherDiv.classList.remove('alert-info');
+          weatherDiv.classList.add('alert-warning');
+          weatherDiv.textContent = 'Unable to load weather at this time.';
+          console.error('Weather fetch failed:', error);
+        }
+      }
+
+      fetchWeather();
     }
 
-    // 4. Dynamic greeting in header
+    // 5. Dynamic greeting in header
     const header = document.querySelector('header h1');
     if (header) {
       const now = new Date();
@@ -65,7 +92,7 @@
         greeting = 'Good Morning, Welcome to Mount Mary University';
       } else if (hour >= 12 && hour < 18) {
         greeting = 'Good Afternoon, Welcome to Mount Mary University';
-      } else if (hour >= 18 || hour < 5) {
+      } else {
         greeting = 'Good Evening, Welcome to Mount Mary University';
       }
 
