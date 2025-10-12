@@ -4,19 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calendar & Events | Mount Mary University</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Header -->
   <header class="bg-primary text-white text-center py-4 mb-4">
     <div class="container">
       <h1 id="page-title">Mount Mary University Calendar & Events</h1>
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
       <a class="navbar-brand" href="index.html">MMU</a>
@@ -33,18 +30,17 @@
     </div>
   </nav>
 
-  <!-- Weather Info -->
-  <div class="container mb-4">
-    <div id="weather" class="alert alert-info d-flex align-items-center" role="alert">
-      <div id="weather-icon" class="me-3"></div>
-      <div><strong>Loading weather...</strong></div>
-    </div>
+  <!-- Pumpkin GIF -->
+  <div class="container mb-4 text-center">
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWs0c3EwZ3Rkd3RpbHl6dHNxcGI5c3N5a3N5eGYya3A1bW5qcHU1ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ecP7TG62hZb800WiBe/giphy.gif"
+         alt="Pumpkin Animation"
+         class="img-fluid rounded shadow"
+         style="max-height: 300px;" />
   </div>
 
-  <!-- Main Content -->
   <main class="container mb-5">
 
-    <!-- Calendar Section -->
+    <!-- Calendar -->
     <section id="calendar" class="mb-5">
       <h2 class="mb-4">October 2025 Calendar</h2>
       <div class="table-responsive">
@@ -57,7 +53,7 @@
           <tbody>
             <tr><td class="text-muted">28</td><td class="text-muted">29</td><td class="text-muted">30</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
             <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-            <tr><td>12</td><td>13</td><td class="table-primary fw-bold">14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+            <tr><td>12</td><td class="table-primary fw-bold">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
             <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
             <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="text-muted">1</td></tr>
           </tbody>
@@ -65,7 +61,7 @@
       </div>
     </section>
 
-    <!-- Events Section -->
+    <!-- Events -->
     <section id="events">
       <h2>Upcoming Events (Week of October 14–20)</h2>
       <ul class="list-group event-list">
@@ -73,7 +69,7 @@
         <li class="list-group-item" tabindex="0">Tuesday, Oct 15: Women's Leadership Speaker Series – 6:00 PM in Alumnae Dining Room</li>
         <li class="list-group-item" tabindex="0">Wednesday, Oct 16: Cyber Café Open Mic Night – 7:00 PM at Cyber Café</li>
         <li class="list-group-item" tabindex="0">Thursday, Oct 17: Student Government Meeting – 12:00 PM in Bergstrom Hall</li>
-        <li class="list-group-item" tabindex="0">Friday, Oct 18: Movie Night: “Hidden Figures” – 8:00 PM in Caroline Hall Theater</li>
+        <li class="list-group-item" tabindex="0">Friday, Oct 18: Movie Night: “Beetlejuice” – 8:00 PM in Caroline Hall Theater</li>
         <li class="list-group-item" tabindex="0">Saturday, Oct 19: Campus Clean-Up Day – 10:00 AM, meet at the Main Entrance</li>
         <li class="list-group-item" tabindex="0">Sunday, Oct 20: Sunday Mass – 11:00 AM in Chapel of the Holy Spirit</li>
       </ul>
@@ -87,13 +83,11 @@
     </div>
   </footer>
 
-  <!-- Bootstrap Bundle JS -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Your aligned JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Highlight current nav link based on URL
       const navLinks = document.querySelectorAll('nav a');
       const currentPage = window.location.pathname.split('/').pop();
 
@@ -104,8 +98,7 @@
         }
       });
 
-      // 2. Smooth scroll (only on index.html)
-      if (currentPage === '' || currentPage === 'index.html') {
+      if (currentPage === 'index.html' || currentPage === '') {
         navLinks.forEach(link => {
           if (link.getAttribute('href').startsWith('#')) {
             link.addEventListener('click', e => {
@@ -120,12 +113,10 @@
         });
       }
 
-      // 3. Calendar event toggle (only on page3.html)
       if (currentPage === 'page3.html') {
         const events = document.querySelectorAll('.event-list li');
         events.forEach(eventItem => {
           eventItem.style.cursor = 'pointer';
-
           eventItem.addEventListener('click', () => {
             let details = eventItem.querySelector('.details');
             if (!details) {
@@ -141,47 +132,12 @@
             }
           });
         });
-
-        // 4. Fetch and display weather using OpenWeatherMap API
-        async function fetchWeather() {
-          const apiKey = 'cbZgq9WJzquxb6cWSKn6q9LQwJsjDMgz'; // ✅ Your API key
-          const city = 'Milwaukee';
-          const units = 'imperial';
-          const weatherDiv = document.getElementById('weather');
-          const iconDiv = document.getElementById('weather-icon');
-
-          if (!weatherDiv || !iconDiv) return; // Exit if weather elements don't exist
-
-          try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const data = await response.json();
-
-            const temp = Math.round(data.main.temp);
-            const description = data.weather[0].description;
-            const iconCode = data.weather[0].icon;
-            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
-
-            iconDiv.innerHTML = `<img src="${iconUrl}" alt="${description}" />`;
-            weatherDiv.querySelector('div:last-child').innerHTML = `<strong>Milwaukee Weather:</strong> ${temp}&deg;F, ${description}`;
-          } catch (error) {
-            weatherDiv.classList.remove('alert-info');
-            weatherDiv.classList.add('alert-warning');
-            weatherDiv.textContent = 'Unable to load weather at this time.';
-            console.error('Weather fetch failed:', error);
-          }
-        }
-
-        fetchWeather();
       }
 
-      // 5. Dynamic greeting in header
       const header = document.querySelector('header h1');
       if (header) {
-        const now = new Date();
-        const hour = now.getHours();
+        const hour = new Date().getHours();
         let greeting = 'Mount Mary University';
-
         if (hour >= 5 && hour < 12) {
           greeting = 'Good Morning, Welcome to Mount Mary University';
         } else if (hour >= 12 && hour < 18) {
@@ -189,10 +145,6 @@
         } else {
           greeting = 'Good Evening, Welcome to Mount Mary University';
         }
-
         header.textContent = greeting;
       }
     });
-  </script>
-</body>
-</html>
