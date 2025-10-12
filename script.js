@@ -48,40 +48,9 @@
           }
         });
       });
-
-      // 4. Fetch and display weather using OpenWeatherMap API
-      async function fetchWeather() {
-        const apiKey = 'cbZgq9WJzquxb6cWSKn6q9LQwJsjDMgz'; // ✅ Your API key
-        const city = 'Milwaukee';
-        const units = 'imperial';
-        const weatherDiv = document.getElementById('weather');
-        const iconDiv = document.getElementById('weather-icon');
-
-        if (!weatherDiv || !iconDiv) return; // Exit if weather elements don't exist
-
-        try {
-          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`);
-          const data = await response.json();
-
-          const temp = Math.round(data.main.temp);
-          const description = data.weather[0].description;
-          const iconCode = data.weather[0].icon;
-          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
-
-          iconDiv.innerHTML = `<img src="${iconUrl}" alt="${description}" />`;
-          weatherDiv.querySelector('div:last-child').innerHTML = `<strong>Milwaukee Weather:</strong> ${temp}&deg;F, ${description}`;
-        } catch (error) {
-          weatherDiv.classList.remove('alert-info');
-          weatherDiv.classList.add('alert-warning');
-          weatherDiv.textContent = 'Unable to load weather at this time.';
-          console.error('Weather fetch failed:', error);
-        }
-      }
-
-      fetchWeather();
     }
 
-    // 5. Dynamic greeting in header
+    // 4. Dynamic greeting in header
     const header = document.querySelector('header h1');
     if (header) {
       const now = new Date();
