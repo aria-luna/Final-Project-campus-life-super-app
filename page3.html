@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+OCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -56,7 +56,7 @@
           <tbody>
             <tr><td class="text-muted">28</td><td class="text-muted">29</td><td class="text-muted">30</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
             <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-            <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+            <tr><td>12</td><td class="table-primary fw-bold">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
             <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
             <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="text-muted">1</td></tr>
           </tbody>
@@ -92,7 +92,7 @@
   <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Highlight current nav link based on URL
+      // 1. Highlight current nav link
       const navLinks = document.querySelectorAll('nav a');
       const currentPage = window.location.pathname.split('/').pop();
 
@@ -103,7 +103,7 @@
         }
       });
 
-      // 2. Smooth scroll (only on index.html)
+      // 2. Smooth scroll on index.html
       if (currentPage === '' || currentPage === 'index.html') {
         navLinks.forEach(link => {
           if (link.getAttribute('href').startsWith('#')) {
@@ -119,7 +119,7 @@
         });
       }
 
-      // 3. Calendar event toggle (only on page3.html)
+      // 3. Toggle event details
       if (currentPage === 'page3.html') {
         const events = document.querySelectorAll('.event-list li');
         events.forEach(eventItem => {
@@ -141,13 +141,11 @@
         });
       }
 
-      // 4. Dynamic greeting in header
+      // 4. Dynamic greeting
       const header = document.querySelector('header h1');
       if (header) {
-        const now = new Date();
-        const hour = now.getHours();
+        const hour = new Date().getHours();
         let greeting = 'Mount Mary University';
-
         if (hour >= 5 && hour < 12) {
           greeting = 'Good Morning, Welcome to Mount Mary University';
         } else if (hour >= 12 && hour < 18) {
@@ -155,15 +153,9 @@
         } else {
           greeting = 'Good Evening, Welcome to Mount Mary University';
         }
-
         header.textContent = greeting;
       }
-
-      // 5. Highlight today's date in the October 2025 calendar
-      const today = new Date();
-      const currentDay = today.getDate();
-      const currentMonth = today.getMonth(); // 0 = Jan, 9 = October
-      const currentYear = today.getFullYear();
-
-      if (currentMonth === 9 && currentYear === 2025) {
-        const calendarTable =
+    });
+  </script>
+</body>
+</html>
