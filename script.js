@@ -67,35 +67,5 @@
 
       header.textContent = greeting;
     }
-
-    // 5. Highlight today's date in the October 2025 calendar
-    const today = new Date();
-    const currentDay = today.getDate();
-    const currentMonth = today.getMonth(); // 0 = Jan, 9 = October
-    const currentYear = today.getFullYear();
-
-    // Check if it's October 2025
-    if (currentMonth === 9 && currentYear === 2025) {
-      const calendarTable = document.querySelector('#calendar table');
-      if (calendarTable) {
-        const cells = calendarTable.querySelectorAll('td');
-        cells.forEach(cell => {
-          const cellDay = parseInt(cell.textContent);
-          if (!isNaN(cellDay) && cellDay === currentDay && !cell.classList.contains('text-muted')) {
-            cell.classList.add('table-primary', 'fw-bold');
-          }
-        });
-      }
-
-      // Insert today's date as a heading above the calendar
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const dateDisplay = today.toLocaleDateString('en-US', options); // e.g., Thursday, October 16, 2025
-      const dateHeading = document.createElement('p');
-      dateHeading.textContent = `Today is ${dateDisplay}`;
-      dateHeading.classList.add('text-center', 'fw-semibold', 'mb-4');
-      const calendarSection = document.getElementById('calendar');
-      const calendarTitle = calendarSection.querySelector('h2');
-      calendarSection.insertBefore(dateHeading, calendarTitle.nextSibling);
-    }
   });
 </script>
